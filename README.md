@@ -21,14 +21,19 @@ Ensure you have the following installed:
     sudo git clone https://github.com/webpwnized/mutillidae.git
     ```
 
-3. Install and configure Apache2:
+3. Move Mutillidae to the web root directory:
+    ```bash
+    sudo mv mutillidae /var/www/html/
+    ```
+    
+4. Install and configure Apache2:
     ```bash
     sudo apt install apache2
     sudo a2enmod rewrite
     sudo systemctl restart apache2
     ```
 
-4. Edit Apache configuration file:
+5. Edit Apache configuration file:
     ```bash
     sudo nano /etc/apache2/apache2.conf
     ```
@@ -45,14 +50,14 @@ Ensure you have the following installed:
     sudo systemctl restart apache2
     ```
 
-5. Install PHP and MySQL support for Apache:
+6. Install PHP and MySQL support for Apache:
     ```bash
     sudo apt install php libapache2-mod-php
     sudo apt install mysql-server php-mysql
     sudo systemctl restart apache2
     ```
 
-6. Configure MySQL:
+7. Configure MySQL:
     ```bash
     sudo mysql -u root
     ```
@@ -69,13 +74,13 @@ Ensure you have the following installed:
     sudo systemctl restart mysql
     ```
 
-7. Allow MySQL through the firewall:
+8. Allow MySQL through the firewall:
     ```bash
     sudo ufw allow 3306
     sudo ufw reload
     ```
 
-8. Set up the Mutillidae database:
+9. Set up the Mutillidae database:
     Open your browser and navigate to:
     ```
     http://your-server-ip/mutillidae/set-up-database.php
